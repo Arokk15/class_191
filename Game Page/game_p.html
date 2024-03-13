@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <script src="./shoot.js"></script>
+    <script src="./enemy.js"></script>
+
+
+
+</head>
+
+<body>
+    <a-scene id="scene">
+        <a-assets>
+            <a-asset-item id="shooter" src="../asset/shooter/gun.gltf"></a-asset-item>
+            <a-asset-item id="place" src="../raw data/forest_gate_police_station/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-camera id="cam" position="0 1.5 0" wasd-controls="acceleration:500" rotation="0 10 0">
+            <a-entity position="0 2.4 -3" text="font:monoid;color:white;align:center;height:3; width:3;
+        value: Welcome to Crazy Bounty Hunter"></a-entity>
+
+
+            <a-entity position="0 2 -3" text="font:monoid;color:white;align:left;height:3; width:3;
+        value: Score : ">
+    </a-entity>
+    <a-entity id="score_v" position="0.6 2 -3" text="font:monoid;color:white;align:left;height:3; width:3;
+value:0"></a-entity>
+
+
+            <a-entity position="0 2 -3" text="font:monoid;color:white;align:right;height:3; width:3;
+        value:Life : "></a-entity>
+            <a-entity id="life_v" position="0.2 2 -3" text="font:monoid;color:white;align:right;height:3; width:3;
+        value:3"></a-entity>
+
+            <a-cursor>
+
+            </a-cursor>
+            <a-entity id="weapon" gltf-model="#shooter" position="0 -4 5" rotation="-5 180 0" scale="1 1 1">
+
+        </a-camera>
+
+        <a-entity bullets></a-entity>
+
+        <a-entity id="environment" environment="preset:egypt;skyType:gradient;lighting:point"></a-entity>
+        </a-entity>
+        <a-entity id="enemy_c" enemy></a-entity>
+
+
+
+
+    </a-scene>
+
+</body>
+
+</html>
